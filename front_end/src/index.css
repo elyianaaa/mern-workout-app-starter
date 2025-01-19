@@ -1,0 +1,168 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* Layout */
+:root {
+  --primary: #9ea1eb;
+  --error: #e7195a;
+}
+body {
+  background: #f9f9f9;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+header {
+  background: #fff;
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #653939;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Homepage Layout */
+.home {
+  display: grid;
+  gap: 40px;
+  padding: 20px;
+}
+
+.workouts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Workout Details */
+.workout-details {
+  background: #ffffff;
+  border-radius: 8px; 
+  padding: 20px;
+}
+
+.workout-details:hover {
+  transform: scale(1.02);
+}
+
+.workout-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: rgb(199, 125, 215);
+}
+
+.workout-details p {
+  margin: 0;
+  font-size: 1em;
+  color: #666;
+}
+
+.workout-details .actions {
+  display: flex;
+  gap: 12px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.workout-details .material-symbols-outlined {
+  cursor: pointer;
+  background: #f0f0f0;
+  padding: 8px;
+  border-radius: 50%;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.workout-details .material-symbols-outlined:hover {
+  background-color: #ddd;
+}
+
+/* New Workout Form */
+label,
+input {
+  display: block;
+  font-size: 1em;
+}
+
+input {
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+form button {
+  border: 0;
+  color: #976969;
+  padding: 12px 20px;
+  font-family: "Poppins";
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition:  0.3s ease;
+}
+
+form button:hover {
+  background-color: #7f8296;
+}
+
+div.error {
+  padding: 12px;
+  background: #ffefef;
+  border: red;
+  color: red;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 20px;
+  max-width: 380px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar input {
+  padding: 10px 15px;
+  font-size: 1em;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: var(--primary);
+}
+
+
+
+
+
+
