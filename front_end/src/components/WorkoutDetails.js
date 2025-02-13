@@ -33,38 +33,30 @@ const WorkoutDetails = ({ workout }) => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-  
-    const updatedWorkout = { title, reps, load }
-  
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/workouts/${workout._id}`, {
-      method: 'PATCH',
-      body: JSON.stringify(updatedWorkout),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-  
-    const json = await response.json()
-  
-    if (response.ok) {
-      // Re-fetch workouts after update
-      const fetchWorkouts = async () => {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/workouts`)
-        const json = await response.json()
-  
-        if (response.ok) {
-          dispatch({ type: 'SET_WORKOUTS', payload: json })
-        }
-      }
-  
-      fetchWorkouts()
-  
-      setIsEditing(false)
-    }
-  }
-  
-  
 
+    if (!user) {
+        return;
+    }
+
+    const updatedWorkout = { title, reps, load };
+
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/workouts/${workout._id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(updatedWorkout),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}`
+        }
+    });
+
+    const json = await response.json();
+
+    if (response.ok) {
+        dispatch({ type: "UPDATE_WORKOUT", payload: json });
+        setIsEditing(false);
+    }
+};
+  
   return (
     <div className="workout-details">
       {isEditing ? (
